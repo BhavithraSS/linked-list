@@ -1,0 +1,44 @@
+class Node:
+    def __init__(self,dataval=None):
+        self.dataval=dataval
+        self.nextval=None
+class linkedlist:
+    def __init__(self):
+        self.headval=None
+    def Atbegining(self,newdata):
+        Newnode=Node(newdata)
+        Newnode.nextval=self.headval
+        self.headval=Newnode
+    def removenode(self,removekey):
+        headval=self.head
+        if(headval is not None):
+            self.head=headval.next
+            headval=None
+            return
+        while(headval is not None):
+            if headval.data==removekey:
+                break
+            prev=headval
+            headval=headval.next
+        if(headval==None):
+            return
+        prev.next=headval.next
+        headval=None
+def llistprint(self):
+    printval=self.head
+    while(printval):
+        print(printval.data)
+        printval=printval.next
+llist=linkedlist()
+llist.Atbegining('mon')
+llist.Atbegining('tue')
+llist.Atbegining('wed')
+llist.Atbegining('thu')
+llist.Atbegining('fri')
+llist.removenode('tue')
+llist.llistprint()
+temp=llist.Atbegining
+while temp:
+    print(temp.dataval,'=>',end='')
+    temp=temp.nextval
+
