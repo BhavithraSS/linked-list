@@ -1,0 +1,34 @@
+class Node:
+    def __init__(self,dataval=None):
+        self.dataval=dataval
+        self.nextval=None
+class linkedlist:
+    def __init__(self):
+        self.headval=None
+    def listprint(self):
+        printval=self.headval
+        while printval is not None:
+            print(printval.dataval)
+            printval=printval.nextval
+    def AtEnd(self,newdata):
+        NewNode=Node(newdata)
+        if self.headval is None:
+            self.headval=NewNode
+            return
+        last=self.headval
+        while(last.nextval):
+            last=last.nextval
+        last.nextval=NewNode
+list=linkedlist()
+list.headval=Node('mon')
+e2=Node('tue')
+e3=Node('wed')
+list.headval.nextval=e2
+e2.nextval=e3
+list.AtEnd('thu')
+list.listprint()
+temp=list.headval
+while temp:
+    print(temp.dataval,'=>',end='')
+    temp=temp.nextval
+
